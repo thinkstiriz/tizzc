@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rocky Art Reward ($RARE) - Paint epic rocks, collect NFTs, and join the crypto art revolution!">
+    <meta name="keywords" content="Rocky Art Reward, $RARE, NFT, Solana, meme coin, crypto art">
+    <title>Rocky Art Reward [$RARE]</title>
+    <link rel="icon" type="image/x-icon" href="assets/rocky_logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="canvas-bg"></div>
+    <div class="rocky-mascot"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="assets/rocky_logo.png" alt="Rocky Art Reward Logo">
+        </div>
+        <nav class="nav-menu">
+            <a href="#home">Home</a>
+            <a href="#why-rare">Why $RARE</a>
+            <a href="#nfts">NFTs</a>
+            <a href="#painter">Paint</a>
+            <a href="#tokenomics">Tokenomics</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#community">Community</a>
+        </nav>
+        <div class="hamburger">☰</div>
+    </header>
+
+    <!-- Sticky Buy Button -->
+    <a href="https://pump.fun/5uiEw5iaZaW7hz7H9fSCWii2vZrDWBhHv371t6yXKSDR" class="sticky-buy cta-button" aria-label="Buy $RARE on Pump.fun">BUY $RARE</a>
+
+    <!-- Hero Section -->
+    <div class="hero" id="home">
+        <video autoplay muted loop class="hero-video">
+            <source src="assets/rocky_video.mp4" type="video/mp4">
+            <img src="assets/rocky_bg.jpg" alt="Rocky Art Background">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="title">ROCKY ART REWARD</h1>
+            <p class="subtitle">Paint <span class="highlight">Epic Rocks</span> & Join the <span class="highlight">Crypto Art Revolution</span>! 🚀</p>
+            <div>
+                <a href="#nfts" class="cta-button" aria-label="Explore NFT Rocks">EXPLORE ROCKS</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why $RARE Section -->
+    <div class="section" id="why-rare">
+        <h2 class="section-title">WHY $RARE ROCKS</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">💸</div>
+                <h3 class="feature-title">SOL Rewards</h3>
+                <p>5% of trades flow back as SOL. HODL and get rich!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3 class="feature-title">World Record</h3>
+                <p>1000 painted rocks for a Guinness Record!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎁</div>
+                <h3 class="feature-title">NFT Airdrops</h3>
+                <p>Hold 5M $RARE for exclusive rock NFTs!</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">😂</div>
+                <h3 class="feature-title">Meme Power</h3>
+                <p>Rocks + artists = ultimate meme coin!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- NFT Gallery Section -->
+    <div class="section" id="nfts">
+        <h2 class="section-title">ROCK GALLERY</h2>
+        <p style="text-align: center; max-width: 900px; margin: 0 auto 50px; font-size: 1.3rem;">
+            Unique hand-painted rock NFTs. Grab yours! 🪨
+        </p>
+        <div class="nft-gallery">
+            <div class="nft-card">
+                <img src="assets/rock1.png" class="nft-image" alt="Degen Rock #001">
+                <div class="nft-info">
+                    <h3 class="nft-name">Degen Rock #001</h3>
+                    <p>"To the Moon" Edition</p>
+                </div>
+            </div>
+            <div class="nft-card">
+                <img src="assets/rock2.png" class="nft-image" alt="WAGMI Rock #042">
+                <div class="nft-info">
+                    <h3 class="nft-name">WAGMI Rock #042</h3>
+                    <p>Diamond Hands Special</p>
+                </div>
+            </div>
+            <div class="nft-card">
+                <img src="assets/rock3.png" class="nft-image" alt="GM Rock #017">
+                <div class="nft-info">
+                    <h3 class="nft-name">GM Rock #017</h3>
+                    <p>Good Morning Sunshine</p>
+                </div>
+            </div>
+            <div class="nft-card">
+                <img src="assets/rock4.png" class="nft-image" alt="NGMI Rock #005">
+                <div class="nft-info">
+                    <h3 class="nft-name">NGMI Rock #005</h3>
+                    <p>For Paper Hands</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rock Painter Tool -->
+    <div class="section rock-painter" id="painter">
+        <h2 class="section-title">PAINT YOUR ROCK</h2>
+        <p style="text-align: center; margin-bottom: 40px; font-size: 1.3rem;">
+            Create a masterpiece and download it! 🎨
+        </p>
+        <canvas id="rockCanvas"></canvas>
+        <div class="painter-controls">
+            <select id="rockBase" aria-label="Select Rock Base">
+                <option value="assets/rock_base1.png">Rock 1</option>
+                <option value="assets/rock_base2.png">Rock 2</option>
+                <option value="assets/rock_base3.png">Rock 3</option>
+            </select>
+            <input type="color" id="brushColor" value="#FF1E56" aria-label="Choose Brush Color">
+            <input type="range" id="brushSize" min="1" max="20" value="5" aria-label="Adjust Brush Size">
+            <button class="cta-button" id="sprayMode" aria-label="Toggle Spray Mode">SPRAY</button>
+            <button class="cta-button" id="eraserMode" aria-label="Toggle Eraser Mode">ERASER</button>
+            <button class="cta-button" onclick="undoCanvas()" aria-label="Undo Last Stroke">UNDO</button>
+            <button class="cta-button" onclick="clearCanvas()" aria-label="Clear Canvas">CLEAR</button>
+            <button class="cta-button" onclick="downloadRock()" aria-label="Download Artwork">DOWNLOAD</button>
+        </div>
+        <div class="sound-toggle">
+            <input type="checkbox" id="soundToggle" checked>
+            <label for="soundToggle">Sound Effects</label>
+        </div>
+    </div>
+
+    <!-- Tokenomics Section -->
+    <div class="section tokenomics" id="tokenomics">
+        <h2 class="section-title">TOKENOMICS</h2>
+        <div class="chart-container">
+            <h3 style="text-align: center; color: var(--primary); font-family: 'Bebas Neue', cursive; font-size: 2.5rem; margin-bottom: 40px;">
+                HOW $RARE ROLLS 💰
+            </h3>
+            <img src="assets/token_chart.png" alt="Token Distribution Chart" style="max-width: 100%; border: 5px solid var(--dark); border-radius: 15px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+                <div>
+                    <h4 style="color: var(--primary); font-family: 'Bebas Neue', cursive; font-size: 2rem;">TOKEN STATS</h4>
+                    <ul style="font-weight: bold; color: var(--dark);">
+                        <li>📊 Total Supply: 1B $RARE</li>
+                        <li>⛓️ Network: Solana</li>
+                        <li>🔥 Burn: 50% of Supply</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); font-family: 'Bebas Neue', cursive; font-size: 2rem;">TAX SPLIT (10%)</h4>
+                    <ul style="font-weight: bold; color: var(--dark);">
+                        <li>🤑 5% SOL Rewards</li>
+                        <li>📢 3% Marketing</li>
+                        <li>🎨 2% Artist Fund</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Roadmap Section -->
+    <div class="section roadmap" id="roadmap">
+        <div class="roadmap-line"></div>
+        <h2 class="section-title">ROCKY ROADMAP</h2>
+        <div class="roadmap-item">
+            <h3 class="roadmap-phase">PHASE 1: IGNITION</h3>
+            <p>$RARE launches, viral memes, 100 rocks painted.</p>
+        </div>
+        <div class="roadmap-item">
+            <h3 class="roadmap-phase">PHASE 2: HYPE</h3>
+            <p>500 rocks, Guinness bid, first NFT airdrop.</p>
+        </div>
+        <div class="roadmap-item">
+            <h3 class="roadmap-phase">PHASE 3: NFT DROP</h3>
+            <p>1000 rocks, NFT launch, exclusive NFTs.</p>
+        </div>
+        <div class="roadmap-item">
+            <h3 class="roadmap-phase">PHASE 4: LEGACY</h3>
+            <p>Art exhibit, gallery collabs, global takeover.</p>
+        </div>
+    </div>
+
+    <!-- Community Section -->
+    <div class="section" id="community">
+        <h2 class="section-title">JOIN THE ART REVOLT</h2>
+        <div class="copy-box">
+            <div class="contract-address">5uiEw5iaZaW7hz7H9fSCWii2vZrDWBhHv371t6yXKSDR</div>
+            <button class="cta-button" onclick="copyToClipboard()" aria-label="Copy Contract Address">COPY CONTRACT</button>
+        </div>
+        <div class="art-feed">
+            <div class="art-piece"><img src="assets/fan_art1.png" alt="Fan Art 1"></div>
+            <div class="art-piece"><img src="assets/fan_art2.png" alt="Fan Art 2"></div>
+            <div class="art-piece"><img src="assets/fan_art3.png" alt="Fan Art 3"></div>
+            <div class="art-piece"><img src="assets/fan_art4.png" alt="Fan Art 4"></div>
+        </div>
+        <div class="spin-game">
+            <h3 style="text-align: center; font-family: 'Bebas Neue', cursive; font-size: 2.5rem; color: var(--primary); margin: 40px 0;">SPIN THE ROCK!</h3>
+            <div id="rockSpinner" class="spinner"></div>
+            <button class="cta-button" onclick="spinRock()" aria-label="Spin the Rock">SPIN!</button>
+        </div>
+        <div class="social-links">
+            <a href="https://twitter.com/RockyArtReward" class="social-link" aria-label="Twitter">𝕏</a>
+            <a href="https://t.me/RockyArtReward" class="social-link" aria-label="Telegram">💬</a>
+            <a href="https://www.tiktok.com/@RockyArtReward" class="social-link" aria-label="TikTok">🎵</a>
+            <a href="https://www.youtube.com/@RockyArtReward" class="social-link" aria-label="YouTube">▶️</a>
+            <a href="https://dexscreener.com/solana/5uiEw5iaZaW7hz7H9fSCWii2vZrDWBhHv371t6yXKSDR" class="social-link" aria-label="DexScreener">📊</a>
+        </div>
+    </div>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">Contract Copied! Paint the Moon! 🎨</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
